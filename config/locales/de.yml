@@ -1,0 +1,42 @@
+de:
+  locales:
+    en: "English"
+    de: "Deutsch"
+    sq: "Shqip"
+  layouts:
+    users_form:
+      home: Home
+    navbar:
+      total_users: Benutzer gesamt
+  users:
+    signup: Anmelden
+    login: Anmeldung
+    logout: Ausloggen
+    login_first: Login First
+    has_already_logged_in: User has already logged in
+    user_panel:
+      likes: Likes
+      settings: Settings
+      check_profile: Check your profile
+    edit:
+      upload_avatar: Click and upload avatar
+      my_page: My Page
+    show:
+      loading: Loading...
+      created_at: Created at
+      songs: Songs
+      total_songs: Total Songs
+      total_comments: Total Comments
+      ago: ago
+      users_count: "%{count}"
+      songs_count: "%{count}"
+      comments_count: "%{count}"
+      no_user: The user does not exist
+    create:
+      successfully: Register successfully
+    update:
+      successfully: Profile is successfully saved
+      faild: Profile save faild
+    activate:
+      activated: User was successfully activated
+  

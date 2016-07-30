@@ -1,0 +1,65 @@
+<% cache [song, index] do %>
+<!-- Begin Small Player -->
+   <!--  <div class="vogel-player">
+      
+      <div class="card">
+        <div class="blurring dimmable image">
+          <img id="vogel-player-album-art" src="<%= song.pic %>"/>
+        </div>
+      </div>
+      <div class="vogel-player-middle">  
+        <div class="vogel-player-middle-top">
+          <div class="vogel-player-middle-controls">
+             <div class="amplitude-play-pause amplitude-paused" amplitude-song-index="<%= song.s_id %>">
+            </div>
+          </div>
+              
+          <div class="vogel-player-middle-meta">
+            <div class="now-playing-title"><%= song.title %></div>
+            <div class="album-information"><%= song.artist %></span></div>
+          </div>
+        </div>
+      </div>
+      <span class="item" id="like-song-<%= song.id %>">
+        <% @favorite = Favorite.favorite(song) %>
+        <%= favorite_likes_tag @favorite %>
+      </span>
+    </div> -->
+                
+    <!-- End Small Player -->
+  <div class="card songs-list">
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted play button">
+                <a class="ui corner  playBtn" data-music_id="<%= song.s_id %>" >
+				        <i class="play icon"  ></i>
+				        </a>
+			      </div>
+          </div>
+        </div>
+      </div>
+      <img src="<%= song.pic %>" style="height: 180px;"/>
+    </div>
+    <div class="content">
+      <h3 class="header">
+		<%= link_to song.title.html_safe, song %>
+	  </h3>
+      <div class="meta">
+        <span class="date"><%= song.artist %></span>
+      </div>
+    </div>
+    <div class="extra content">
+    <span class="item" id="like-song-<%= song.id %>">
+        <% @favorite = Favorite.favorite(song) %>
+        <%= favorite_likes_tag @favorite %>
+      </span>
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+  </div>
+<% end %>
+   

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learnruby</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body<%= " class=#{@body_id}" if @body_id %> >
+<div class="wallpaper" >
+	
+	<%= render 'layouts/navbar' %>
+	
+	<%= render 'layouts/playlist' %>
+	<div class="container animated fadeIn">
+		<%= render 'shared/flash' %>
+		<div class="ui grid">
+
+			<div class="two wide column">
+			</div>
+			<div class="nine wide column" id="main">
+					<audio id="player" data-music_id="-1" type="audio/mp3" preload></audio>
+				
+			
+			<script>
+				  var a = audiojs;
+				      a.events.ready(function() {
+				        var a1 = a.createAll();
+				      });
+				</script>
+			<main>
+				<%= yield %>
+			</main>
+				<br />
+
+			</div>
+  		</div>
+	</div>
+ </div>
+	
+		</div>
+	</div>
+
+</div>	
+</body>
+</html>

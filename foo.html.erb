@@ -1,0 +1,4 @@
+<span class="item" id="like-song-<%= @song.id %>">
+<% @likeable = Likeship.likeable(@song) %>
+<%= likeable_likes_tag @likeable %>
+</span>

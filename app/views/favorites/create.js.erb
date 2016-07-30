@@ -1,0 +1,5 @@
+if('<%= params[:favorite_type] %>' == 'Song'){
+  $('#like-song-<%= params[:favorite_id] %>').html("<%= j(favorite_likes_tag @favorite) %>")
+}else {
+  $('#like-comment-<%= params[:favorite_id] %>').html("<%= j(favorite_likes_tag @favorite) %>")
+}

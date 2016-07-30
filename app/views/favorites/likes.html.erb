@@ -1,0 +1,6 @@
+<% if logged_in?
+if current_user.liking?(@favorite)
+ %><%= render 'favorites/unlike' %>
+<% else
+ %><%= render 'favorites/like' %>
+<% end; end %>

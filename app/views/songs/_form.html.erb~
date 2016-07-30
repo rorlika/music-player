@@ -1,0 +1,35 @@
+<%= form_for song, remote: true do |f| %>
+<div id="song-errors">
+	<%= render 'shared/error_messages', object: song %>
+</div>
+<div class="ui large form">
+	<div class="field">
+		<h4 class="ui dividing header">Song details</h4>
+		<div class="two fields">
+			<div class="field">
+				<label>Title:</label>
+				<%= f.text_field :title, placeholder: "#{t('.title')}" %>
+			</div>
+			<div class="field">
+				<label>Singer:</label>
+				<%= f.text_field :artist, placeholder: "#{t('.singer')}" %>
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<h4 class="ui dividing header">Upload files</h4>
+		<div class="two fields">
+		<div class="field">
+			 <label>Picture:</label>
+			 <%= f.file_field :pic %>
+		</div>
+		<div class="field">
+			 <label>Attachment:</label>
+			 <%= f.file_field :attachment %>
+		</div>
+		</div>
+	</div>
+	<%= f.submit "#{t('form.submit')}", class: "ui submit button orange pull-right", data: { disable_with: "#{t('form.submitting')}" } %>
+</div>
+<% end %>
+

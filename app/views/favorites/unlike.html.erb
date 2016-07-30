@@ -1,0 +1,5 @@
+<i class="empty heart icon">
+</i>
+<%= form_for current_user.favorites.find_by(@favorite), html; { method: :delete } do |f|
+ %><%=f.submit %>
+<% end %>

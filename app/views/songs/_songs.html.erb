@@ -1,0 +1,46 @@
+<% cache [:songs, @songs] do
+if index
+if logged_in?
+ %>
+<% @body_id = "toolkit" %>
+<div class="ui modal song-form">
+	<i class="close red icon"></i>
+	
+	<div class="content">
+	<%= render 'songs/form', song: current_user.songs.new %>
+
+	</div>
+</div>
+<% end; end; if @recommend %>
+<div class="ui orange message">
+	<div class="ui center aligned basic segment">
+		<%= t('.recommend_songs') %>
+	</div>
+</div>
+<% end %>
+<div data-image="<%= asset_path("loading.gif") %>" id="songs">
+	<div class="ui green button modal-toggle"><%= t('.share_a_song') %></div>
+	<div class="ui cards ">
+	<% for song in @songs do%>
+		<%= render 'song', song: song, index: index %>
+	<% end %>
+	</div>
+	<div data-loaded="<%= t('.loaded') %>" id="pagination">
+		<%= paginate @songs %>
+	</div>
+</div>
+<div class="testjquery">
+	<p>If you click on the "Hide" button, I will disappear.</p>
+	<button id="hide">Hide</button>
+	<button id="show">Show</button>
+</div>
+	
+<% end %>
+
+<script type="text/javascript">
+	
+	$('.cards .image').dimmer({
+ 			on: 'hover'
+		});
+
+</script>

@@ -1,0 +1,7 @@
+<i class="red heart icon"></i>
+
+<%= form_for current_user.favorites.build do |f|
+ %><%= f.hidden_field :favorite_type, value: @favorite[:favorite_type] %>
+<%= f.hidden_field :favorite_id, value: @favorite[:favorite_id] %>
+<%= f.submit %>
+<% end %>

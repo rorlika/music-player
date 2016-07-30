@@ -1,0 +1,26 @@
+<% if logged_in? %>
+	<%=render 'users/user_panel' %>
+<% else %>
+	<div class="ui vertical aligned center segment landing inverted">
+			<div class="ui container">
+				<div class="ui secondary inverted top large pointing menu">
+					<div class="left item">
+						<%= link_to root_path, id: "logo", :remote => true, class: "item" do
+		 				%><i class="music icon">
+						</i><% end %>
+					</div>
+					<div class="right item">
+						
+						<div class="ui buttons">
+						<%= link_to "#{t('users.signup')}", :signup, class: "ui blue inverted button" %>
+      					<div class="or">
+						</div>
+      					<%= link_to "#{t('users.login')}", :login, class: "ui purple inverted button" %>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	
+<% end %>
